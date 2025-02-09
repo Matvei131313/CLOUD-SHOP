@@ -4,39 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CLOUD SHOP</title>
+    <script src="https://unpkg.com/@tonconnect/sdk@latest"></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>CLOUD SHOP</header>
 
-    <header>
-        <h1>Добро пожаловать в CLOUD SHOP</h1>
-        <nav>
-            <button onclick="showPage('menu')">Меню</button>
-            <button onclick="showPage('cart')">Корзина</button>
-        </nav>
-    </header>
+    <nav>
+        <button onclick="showPage('menu')">Меню</button>
+        <button onclick="showPage('cart')">Корзина</button>
+    </nav>
 
-    <main>
-        <section id="menu">
-            <h2>Меню товаров</h2>
-            <div class="product">
-                <p>Товар 1 - 100₽</p>
-                <button onclick="addToCart('Товар 1', 100)">Купить</button>
-            </div>
-            <div class="product">
-                <p>Товар 2 - 200₽</p>
-                <button onclick="addToCart('Товар 2', 200)">Купить</button>
-            </div>
-        </section>
+    <section id="menu">
+        <div class="product">
+            <p>Товар 1 - 100₽</p>
+            <button onclick="addToCart('Товар 1', 100)">Добавить в корзину</button>
+        </div>
+        <div class="product">
+            <p>Товар 2 - 200₽</p>
+            <button onclick="addToCart('Товар 2', 200)">Добавить в корзину</button>
+        </div>
+    </section>
 
-        <section id="cart" style="display:none;">
-            <h2>Корзина</h2>
-            <ul id="cart-items"></ul>
-            <p id="total">Итого: 0₽</p>
-            <button onclick="checkout()">Оформить заказ</button>
-        </section>
-    </main>
-
-    <script src="script.js"></script>
+    <section id="cart" style="display:none;">
+        <h2>Корзина</h2>
+        <ul id="cart-items"></ul>
+        <p id="total">Итого: 0₽</p>
+        <button id="connectWallet">🔗 Подключить TON-кошелек</button>
+        <button id="payWithTon" style="display: none;">💰 Оплатить в TON</button>
+    </section>
 </body>
 </html>
